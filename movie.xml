@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension version="3.0" type="plugin" group="content" method="upgrade">
+	<name>Content - Movie</name>
+	<author>José Alfredo Monroy</author>
+	<creationDate>June 2015</creationDate>
+	<copyright>Copyright (C) 2015 José Alfredo Monroy</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>fredydeltoro@gmail.com</authorEmail>
+	<version>1.0</version>
+	<description>Despliega la información de peliculas en un formato comodo</description>
+
+	<files>
+		<filename plugin="movie">movie.php</filename>
+		<folder>forms</folder>
+		<folder>language</folder>
+		<folder>sql</folder>
+	</files>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/update</schemapath>
+		</schemas>
+	</update>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="limit_to_category"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="PLG_CONTENT_KSEXTRAS_PARAM_LIMIT_TO_CATEGORY_LABEL"
+					description="PLG_CONTENT_KSEXTRAS_PARAM_LIMIT_TO_CATEGORY_DESC"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+				</field>
+				
+				<field
+					name="category"
+					type="category"
+					extension="com_content"
+					label="Categoria"
+					description="lista las categorias del contenido"
+				/>
+
+				<field
+					name="include_child_categories"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="PLG_CONTENT_KSEXTRAS_PARAM_INCLUDE_CHILD_CATEGORIES_LABEL"
+					description="PLG_CONTENT_KSEXTRAS_PARAM_INCLUDE_CHILD_CATEGORIES_DESC"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

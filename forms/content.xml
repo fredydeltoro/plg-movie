@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form>
+	
+	<fields name="attribs">
+		<fieldset name="content" label="Movie">
+
+			<field type="spacer" name="ficha"  label="&lt;b&gt;Ficha Tecnica&lt;/b&gt;"/>
+			
+			<field
+				name="original"
+				type="text"
+				id="original"
+				class="input-xxlarge"
+				required="true"
+				description="Título original de la película"
+				label="Título original"
+				message="Introduce el título original"
+				size="30"
+			/>
+
+			<field 
+				name="genero" 
+				type="checkboxes"
+				id="genero"
+				required="true"
+				class="form-inline"
+				label="Genero"
+				>
+					<option value="dra">Drama</option>
+					<option value="com">Comedia</option>
+					<option value="acc">Acción</option>
+					<option value="ave">Aventura</option>
+					<option value="ter">Terror</option>
+					<option value="cfn">Ciencia Ficción</option>
+					<option value="rom">Romántico</option>
+					<option value="mus">Musical</option>
+					<option value="sus">Suspenso</option>
+					<option value="wes">Western</option>
+					<option value="inf">Infantil</option>
+					<option value="fan">Fantasía</option>
+					<option value="mel">Melodrama</option>
+					<option value="his">Histórico</option>
+					<option value="ani">Animación</option>
+					<option value="doc">Documental</option>
+					
+			</field>
+
+			<field
+				name="clasif"
+				type="list"
+				id="clasif"
+				default=""
+				class="input-mini"
+				required="true"
+				label="Clasificación"
+				>
+				<option value="0">AA</option>
+				<option value="1">A</option>
+				<option value="2">B</option>
+				<option value="3">B-15</option>
+				<option value="4">C</option>
+				<option value="5">D</option>
+				
+			</field>
+
+			<field
+				name="idioma"
+				type="checkboxes"
+				id="idioma"
+				required="true"
+				label="Idioma"
+				description="Idioma de la película"
+				>
+					<option value="esp">Español</option>
+					<option value="sub">Subtitulada</option>
+			</field>
+			
+			<field
+				name="formato"
+				type="checkboxes"
+				id="formato"
+				label="Formato"
+				description="Formato en el que se proyecta la película"
+				>
+					<option value="2d">2D</option>
+					<option value="3d">3D</option>
+			</field>
+			
+			<field
+				name="duracion"
+				type="text"
+				filter="int"
+				class="validate-numeric input-mini"
+				maxlength="3"
+				id="duracion"
+				required="true"
+				description="Duración en min. de la película"
+				label="Duración"
+				message="Introduce la duración de la película"
+				size="30"
+			/>
+			<field
+				name="link"
+				type="url"
+				id="link"
+				default="https://"
+				description="La página oficial de la película"
+				label="Página Oficial"
+				message="Introduce la Página oficial de la película"
+				size="30"
+			/>
+
+			<field type="spacer" name="vy" label="&lt;b&gt;Video&lt;/b&gt;"/>
+
+			<field
+				name="video"
+				type="text"
+				id="video"
+				class="input-medium"
+				description="El id del video de la película"
+				label="Video de youtube"
+				message="Introduce el id de youtube"
+				size="30"
+			/>
+
+			<field type="spacer" name="h" label="&lt;b&gt;Horario&lt;/b&gt;"/>			
+
+			<field 
+				name="lunes"
+				type="Repeatable"
+				id="lunes"
+				icon="edit"
+				maximum="12"
+				select="editar"
+				description="Funciones del día lunes"
+				label="Lunes"
+			>
+				<fields name="params">
+					<fieldset hidden="true" name="lunes_modal" label="Lunes" repeat="true">
+						<field
+							name="hora"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="23"
+							step="1"
+							id="hora"
+							description=""
+							label="Hora"
+							message="selecciona"
+							size="10"
+						/>
+						<field
+							name="min"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="59"
+							step="1"
+							id="min"
+							description=""
+							label="Min"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="sala"
+							type="integer"
+							class="input-mini"
+							first="1"
+							last="4"
+							step="1"
+							id="sala"
+							description=""
+							label="Sala"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="language"
+							type="radio"
+							id="language"
+							label="Idioma"
+							description=""
+							>
+								<option value="1">Esp</option>
+								<option value="0">Sub</option>
+						</field>
+
+						<field
+							name="format"
+							type="radio"
+							id="format"
+							label="Formato"
+							description=""
+							>
+								<option value="1">2D</option>
+								<option value="0">3D</option>
+						</field>
+
+					</fieldset>
+				</fields>
+			</field>
+
+		</fieldset>
+	</fields>
+</form>
