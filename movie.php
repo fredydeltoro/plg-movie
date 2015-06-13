@@ -48,7 +48,13 @@
 				'duracion',
 				'link',
 				'video',
-				'lunes'
+				'lunes',
+				'martes',
+				'miercoles',
+				'jueves',
+				'viernes',
+				'sabado',
+				'domingo'
 			);
 			
 			return $mvfields;
@@ -297,9 +303,6 @@
 				return;
 			}
 
-			// add extra css for table
-			$doc = JFactory::getDocument();
-			//$doc->addStyleSheet(JURI::base(true).'/plugins/content/ksextras/extras/ksextras.css');
 
 			// construct a result table on the fly   
 			jimport('joomla.html.grid');

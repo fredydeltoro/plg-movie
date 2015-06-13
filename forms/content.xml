@@ -26,22 +26,22 @@
 				class="form-inline"
 				label="Genero"
 				>
-					<option value="dra">Drama</option>
-					<option value="com">Comedia</option>
-					<option value="acc">Acción</option>
-					<option value="ave">Aventura</option>
-					<option value="ter">Terror</option>
-					<option value="cfn">Ciencia Ficción</option>
-					<option value="rom">Romántico</option>
-					<option value="mus">Musical</option>
-					<option value="sus">Suspenso</option>
-					<option value="wes">Western</option>
-					<option value="inf">Infantil</option>
-					<option value="fan">Fantasía</option>
-					<option value="mel">Melodrama</option>
-					<option value="his">Histórico</option>
-					<option value="ani">Animación</option>
-					<option value="doc">Documental</option>
+					<option value="Drama">Drama</option>
+					<option value="Comedia">Comedia</option>
+					<option value="Acción">Acción</option>
+					<option value="Aventura">Aventura</option>
+					<option value="Terror">Terror</option>
+					<option value="Ciencia Ficción">Ciencia Ficción</option>
+					<option value="Romántica">Romántica</option>
+					<option value="Musical">Musical</option>
+					<option value="Suspenso">Suspenso</option>
+					<option value="Western">Western</option>
+					<option value="Infantil">Infantil</option>
+					<option value="Fantasía">Fantasía</option>
+					<option value="Melodrama">Melodrama</option>
+					<option value="Histórico">Histórico</option>
+					<option value="Animación">Animación</option>
+					<option value="Documental">Documental</option>
 					
 			</field>
 
@@ -54,12 +54,12 @@
 				required="true"
 				label="Clasificación"
 				>
-				<option value="0">AA</option>
-				<option value="1">A</option>
-				<option value="2">B</option>
-				<option value="3">B-15</option>
-				<option value="4">C</option>
-				<option value="5">D</option>
+				<option value="AA">AA</option>
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="B-15">B-15</option>
+				<option value="C">C</option>
+				<option value="D">D</option>
 				
 			</field>
 
@@ -71,8 +71,8 @@
 				label="Idioma"
 				description="Idioma de la película"
 				>
-					<option value="esp">Español</option>
-					<option value="sub">Subtitulada</option>
+					<option value="Esp">Español</option>
+					<option value="Sub">Subtitulada</option>
 			</field>
 			
 			<field
@@ -89,7 +89,6 @@
 			<field
 				name="duracion"
 				type="text"
-				filter="int"
 				class="validate-numeric input-mini"
 				maxlength="3"
 				id="duracion"
@@ -136,7 +135,8 @@
 				label="Lunes"
 			>
 				<fields name="params">
-					<fieldset hidden="true" name="lunes_modal" label="Lunes" repeat="true">
+					<fieldset hidden="true" name="lunes_modal" repeat="true">
+						<field type="spacer" name="ficha"  label="Lunes"/>
 						<field
 							name="hora"
 							type="integer"
@@ -185,8 +185,8 @@
 							label="Idioma"
 							description=""
 							>
-								<option value="1">Esp</option>
-								<option value="0">Sub</option>
+								<option value="Esp">Esp</option>
+								<option value="Sub">Sub</option>
 						</field>
 
 						<field
@@ -196,8 +196,488 @@
 							label="Formato"
 							description=""
 							>
-								<option value="1">2D</option>
-								<option value="0">3D</option>
+								<option value="2D">2D</option>
+								<option value="3D">3D</option>
+						</field>
+
+					</fieldset>
+				</fields>
+			</field>
+
+			<field 
+				name="martes"
+				type="Repeatable"
+				id="martes"
+				icon="edit"
+				maximum="12"
+				select="editar"
+				description="Funciones del día martes"
+				label="Martes"
+			>
+				<fields name="params">
+					<fieldset hidden="true" name="martes_modal" repeat="true">
+						<field type="spacer" name="ficha"  label="Martes"/>
+						<field
+							name="hora"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="23"
+							step="1"
+							id="hora"
+							description=""
+							label="Hora"
+							message="selecciona"
+							size="10"
+						/>
+						<field
+							name="min"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="59"
+							step="1"
+							id="min"
+							description=""
+							label="Min"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="sala"
+							type="integer"
+							class="input-mini"
+							first="1"
+							last="4"
+							step="1"
+							id="sala"
+							description=""
+							label="Sala"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="language"
+							type="radio"
+							id="language"
+							label="Idioma"
+							description=""
+							>
+								<option value="Esp">Esp</option>
+								<option value="Sub">Sub</option>
+						</field>
+
+						<field
+							name="format"
+							type="radio"
+							id="format"
+							label="Formato"
+							description=""
+							>
+								<option value="2D">2D</option>
+								<option value="3D">3D</option>
+						</field>
+
+					</fieldset>
+				</fields>
+			</field>
+
+			<field 
+				name="miercoles"
+				type="Repeatable"
+				id="miercoles"
+				icon="edit"
+				maximum="12"
+				select="editar"
+				description="Funciones del día miércoles"
+				label="Miércoles"
+			>
+				<fields name="params">
+					<fieldset hidden="true" name="miercoles_modal" repeat="true">
+						<field type="spacer" name="ficha"  label="Miércoles"/>
+						<field
+							name="hora"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="23"
+							step="1"
+							id="hora"
+							description=""
+							label="Hora"
+							message="selecciona"
+							size="10"
+						/>
+						<field
+							name="min"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="59"
+							step="1"
+							id="min"
+							description=""
+							label="Min"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="sala"
+							type="integer"
+							class="input-mini"
+							first="1"
+							last="4"
+							step="1"
+							id="sala"
+							description=""
+							label="Sala"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="language"
+							type="radio"
+							id="language"
+							label="Idioma"
+							description=""
+							>
+								<option value="Esp">Esp</option>
+								<option value="Sub">Sub</option>
+						</field>
+
+						<field
+							name="format"
+							type="radio"
+							id="format"
+							label="Formato"
+							description=""
+							>
+								<option value="2D">2D</option>
+								<option value="3D">3D</option>
+						</field>
+
+					</fieldset>
+				</fields>
+			</field>
+
+			<field 
+				name="jueves"
+				type="Repeatable"
+				id="jueves"
+				icon="edit"
+				maximum="12"
+				select="editar"
+				description="Funciones del día jueves"
+				label="Jueves"
+			>
+				<fields name="params">
+					<fieldset hidden="true" name="jueves_modal" repeat="true">
+						<field type="spacer" name="ficha"  label="Jueves"/>
+						<field
+							name="hora"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="23"
+							step="1"
+							id="hora"
+							description=""
+							label="Hora"
+							message="selecciona"
+							size="10"
+						/>
+						<field
+							name="min"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="59"
+							step="1"
+							id="min"
+							description=""
+							label="Min"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="sala"
+							type="integer"
+							class="input-mini"
+							first="1"
+							last="4"
+							step="1"
+							id="sala"
+							description=""
+							label="Sala"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="language"
+							type="radio"
+							id="language"
+							label="Idioma"
+							description=""
+							>
+								<option value="Esp">Esp</option>
+								<option value="Sub">Sub</option>
+						</field>
+
+						<field
+							name="format"
+							type="radio"
+							id="format"
+							label="Formato"
+							description=""
+							>
+								<option value="2D">2D</option>
+								<option value="3D">3D</option>
+						</field>
+
+					</fieldset>
+				</fields>
+			</field>
+
+			<field 
+				name="viernes"
+				type="Repeatable"
+				id="viernes"
+				icon="edit"
+				maximum="12"
+				select="editar"
+				description="Funciones del día viernes"
+				label="Viernes"
+			>
+				<fields name="params">
+					<fieldset hidden="true" name="viernes_modal" repeat="true">
+						<field type="spacer" name="ficha"  label="Viernes"/>
+						<field
+							name="hora"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="23"
+							step="1"
+							id="hora"
+							description=""
+							label="Hora"
+							message="selecciona"
+							size="10"
+						/>
+						<field
+							name="min"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="59"
+							step="1"
+							id="min"
+							description=""
+							label="Min"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="sala"
+							type="integer"
+							class="input-mini"
+							first="1"
+							last="4"
+							step="1"
+							id="sala"
+							description=""
+							label="Sala"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="language"
+							type="radio"
+							id="language"
+							label="Idioma"
+							description=""
+							>
+								<option value="Esp">Esp</option>
+								<option value="Sub">Sub</option>
+						</field>
+
+						<field
+							name="format"
+							type="radio"
+							id="format"
+							label="Formato"
+							description=""
+							>
+								<option value="2D">2D</option>
+								<option value="3D">3D</option>
+						</field>
+
+					</fieldset>
+				</fields>
+			</field>
+
+			<field 
+				name="sabado"
+				type="Repeatable"
+				id="sabado"
+				icon="edit"
+				maximum="12"
+				select="editar"
+				description="Funciones del día martes"
+				label="Sabado"
+			>
+				<fields name="params">
+					<fieldset hidden="true" name="sabado_modal" repeat="true">
+						<field type="spacer" name="ficha"  label="Sabado"/>
+						<field
+							name="hora"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="23"
+							step="1"
+							id="hora"
+							description=""
+							label="Hora"
+							message="selecciona"
+							size="10"
+						/>
+						<field
+							name="min"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="59"
+							step="1"
+							id="min"
+							description=""
+							label="Min"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="sala"
+							type="integer"
+							class="input-mini"
+							first="1"
+							last="4"
+							step="1"
+							id="sala"
+							description=""
+							label="Sala"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="language"
+							type="radio"
+							id="language"
+							label="Idioma"
+							description=""
+							>
+								<option value="Esp">Esp</option>
+								<option value="Sub">Sub</option>
+						</field>
+
+						<field
+							name="format"
+							type="radio"
+							id="format"
+							label="Formato"
+							description=""
+							>
+								<option value="2D">2D</option>
+								<option value="3D">3D</option>
+						</field>
+
+					</fieldset>
+				</fields>
+			</field>
+
+			<field 
+				name="domingo"
+				type="Repeatable"
+				id="domingo"
+				icon="edit"
+				maximum="12"
+				select="editar"
+				description="Funciones del día martes"
+				label="Domingo"
+			>
+				<fields name="params">
+					<fieldset hidden="true" name="domingo_modal" repeat="true">
+						<field type="spacer" name="ficha"  label="Domingo"/>
+						<field
+							name="hora"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="23"
+							step="1"
+							id="hora"
+							description=""
+							label="Hora"
+							message="selecciona"
+							size="10"
+						/>
+						<field
+							name="min"
+							type="integer"
+							class="input-mini"
+							first="0"
+							last="59"
+							step="1"
+							id="min"
+							description=""
+							label="Min"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="sala"
+							type="integer"
+							class="input-mini"
+							first="1"
+							last="4"
+							step="1"
+							id="sala"
+							description=""
+							label="Sala"
+							message="selecciona"
+							size="10"
+						/>
+
+						<field
+							name="language"
+							type="radio"
+							id="language"
+							label="Idioma"
+							description=""
+							>
+								<option value="Esp">Esp</option>
+								<option value="Sub">Sub</option>
+						</field>
+
+						<field
+							name="format"
+							type="radio"
+							id="format"
+							label="Formato"
+							description=""
+							>
+								<option value="2D">2D</option>
+								<option value="3D">3D</option>
 						</field>
 
 					</fieldset>
